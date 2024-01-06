@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <Python.h>
 /**
- * print_python_list_info -  function that prints Python lists's infos
- * @p: python list
+ * print_python_list_info - func displays info about Python lsts
+ * 
+ * @p: python lst
 */
+
 void print_python_list_info(PyObject *p)
 {
 	int elem;
