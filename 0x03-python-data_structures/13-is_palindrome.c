@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
-*add_nodeint - adds a nd at the beginning of a listint_t lst
-*@head: listint_t lst's head
-*@n: the int that gonna be added in listint_t lst
-*Return: the addr of the element | NULL in fail
+*add_nodeint - adds a new node at the beginning of a listint_t list
+*@head: head of listint_t
+*@n: int to add in listint_t list
+*Return: address of the new element, or NULL if it failed
 */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
@@ -21,9 +21,9 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	return (new);
 }
 /**
-*is_palindrome - identify if a sing linkd lst is palindrome
-*@head: listint_t's head
-*Return: returns 1 if it is a palindrome else 0
+*is_palindrome - identify if a syngle linked list is palindrome
+*@head: head of listint_t
+*Return: 1 if it is palindrome else 0
 */
 int is_palindrome(listint_t **head)
 {
