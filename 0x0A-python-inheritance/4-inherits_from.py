@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Definition of  an inherit class-checking funct."""
 
 
