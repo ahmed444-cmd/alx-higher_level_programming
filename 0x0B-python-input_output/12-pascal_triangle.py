@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-    def pascal_triangle().
+    12-pascal_triangle: pascal_triangle()
 """
 
 
 def pascal_triangle(n):
     """
-        returns a lis of lists of ints.
+        returns a lis of lists of integers
         Args:
-            n (int): numb of lsts and digits.
-        Returns: lst of lsts.
+            n (int): number of lists and digits
+        Returns: list of lists
     """
     t_row = [1]
     temp_l = [0]
