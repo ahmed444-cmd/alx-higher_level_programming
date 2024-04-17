@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Definition of  an inherit class-checking funct."""
+"""
+    4-inherits_from: inherits_from()
+"""
 
 
 def inherits_from(obj, a_class):
@@ -11,6 +13,7 @@ def inherits_from(obj, a_class):
             a_class (class): class.
         Returns: True or False.
     """
-    if issubclass(type(obj), a_class) and type(obj) != a_class:
+    if not type(obj) is a_class and issubclass(type(obj), a_class):
         return True
-    return False
+    else:
+        return False
