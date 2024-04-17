@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module contains is_same_class method"""
+"""Module containing is_same_class method"""
+
 
 def is_same_class(obj, a_class):
     """Returns:
