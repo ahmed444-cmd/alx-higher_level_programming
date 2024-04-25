@@ -5,12 +5,12 @@ import csv
 
 
 class Base:
-    '''A representation of the base of our OOP hierarchy.'''
+    '''A representation of the base of our hierarchy.'''
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Constructor.'''
+        '''Constructeur.'''
         if id is not None:
             self.id = id
         else:
