@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-'''Defines class Rectangle.'''
+'''Definition class Rectangle.'''
 from models.base import Base
 
 
 class Rectangle(Base):
-    '''Represent a Rectangle class.'''
+    '''Represents a Rectangle class.'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Initialize a new Rectangle.
+        '''Initializes a new Rectangle.
 
         Args:
-           width (int): The width of the rectangle.
-           height (int): The height of the rectangle.
-           x (int): The x coordinate of the rectangle.
-           y (int): The y coordinate of the rectangle.
-           id (int): The identity of the rectangle.
+           width (int): The width of rectangle.
+           height (int): The height of rectangle.
+           x (int): The x coordinate of rectangle.
+           y (int): The y coordinate of rectangle.
+           id (int): The identity of rectangle.
         Raises:
            TypeError: If the input is not an integer.
            ValueError: If width/height is <= 0.
@@ -27,7 +27,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''Set/Get the width of rectangle.'''
+        '''Setter/Getter the width of rectangle.'''
         return self.__width
 
     @width.setter
@@ -40,7 +40,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        '''Set/Get the height of rectangle.'''
+        '''Setter/Getter the height of rectangle.'''
         return self.__height
 
     @height.setter
@@ -53,7 +53,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        '''Set/Get the x coordinates of rectangle.'''
+        '''Setter/Getter the x coordinates of rectangle.'''
         return self.__x
 
     @x.setter
@@ -66,7 +66,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        '''Set/Get the y coordinates of rectangle.'''
+        '''Setter/Getter the y coordinates of rectangle.'''
         return self.__y
 
     @y.setter
@@ -82,7 +82,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        '''Display the rectangle using #.'''
+        '''Displays the rectangle using #.'''
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -100,16 +100,16 @@ class Rectangle(Base):
                                                        self.width, self.height)
 
     def update(self, *args, **kwargs):
-        '''Update by assigns an argument to each attribute.
+        '''Update an argument to each attribute.
 
         Args:
            *args (ints): new attribute value.
-               - 1st argument represent id attribute.
-               - 2nd argument represent width attribute.
-               - 3rd argument represent height attribute.
-               - 4th argument represent x attribute.
-               - 5th argument represent y attribute.
-            **kwargs (dict): A double pointer to a dictionary.
+               - 1st argument represent id attr.
+               - 2nd argument represent width attr.
+               - 3rd argument represent height attr.
+               - 4th argument represent x attr.
+               - 5th argument represent y attr.
+            **kwargs (dict): A double points to a dictionary.
         '''
         if args and len(args) != 0:
             argument = 0
@@ -145,7 +145,7 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        '''Returns the dictionary representation of a Rectangle.'''
+        '''Returns the dictionary of a Rectangle.'''
         return {
                 'id': self.id,
                 'width': self.width,
