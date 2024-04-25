@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""
-Definition of a base model class.
-"""
+'''Module for Base class.'''
+from json import dumps, loads
+import csv
 
 
 class Base:
-    """
-    Represention of the base model
-    """
+    '''A representation of the base of our OOP hierarchy.'''
+
     __nb_objects = 0
+
     def __init__(self, id=None):
+        '''Constructor.'''
         if id is not None:
             self.id = id
         else:
