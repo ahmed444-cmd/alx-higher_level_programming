@@ -4,10 +4,10 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    '''Rectangle class.'''
+    '''A Rectangle class.'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Construct.'''
+        '''Constructor.'''
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,7 +16,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''Width of the rectangle.'''
+        '''Width of this rectangle.'''
         return self.__width
 
     @width.setter
@@ -26,7 +26,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        '''Height of the rectangle.'''
+        '''Height of this rectangle.'''
         return self.__height
 
     @height.setter
@@ -36,7 +36,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        '''x of the rectangle.'''
+        '''x of this rectangle.'''
         return self.__x
 
     @x.setter
@@ -46,7 +46,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        '''y of the rectangle.'''
+        '''y of this rectangle.'''
         return self.__y
 
     @y.setter
