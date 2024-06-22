@@ -1,88 +1,54 @@
-0x0F. Python - Object-relational mapping
+0x0F. Python - Object-relational Mapping
 Description
-The goal of this project is to learn how to use an Object-relational mapper (ORM). The module MySQLdb will be used in Python to connect to a MySQL database, and then the module SQLAlchemy will be used.
+This project aims to teach you how to use an Object-relational Mapper (ORM). You'll start by using the MySQLdb module to connect to a MySQL database in Python, then transition to using SQLAlchemy, another popular ORM.
 
 Background Context
-In this project, you will link two amazing worlds: Databases and Python!
+In this project, you'll be bridging the gap between two fascinating domains: Databases and Python.
 
-In the first part, you will use the module MySQLdb to connect to a MySQL database and execute your SQL queries.
+Initially, you'll use the MySQLdb module to connect to a MySQL database and run SQL queries. In the next phase, you'll utilize SQLAlchemy (pronounced "SQL Alchemy"), an ORM that abstracts database storage, allowing you to focus on interacting with objects rather than writing SQL queries.
 
-In the second part, you will use the module SQLAlchemy (don’t ask me how to pronounce it…) an Object Relational Mapper (ORM).
+The primary advantage of using an ORM is that it eliminates the need to write SQL queries. Instead, you will focus on manipulating your objects, not worrying about how and where they are stored. Additionally, your code will be storage type-agnostic, making it easier to switch storage solutions without rewriting your project.
 
-The biggest difference is: no more SQL queries! Indeed, the purpose of an ORM is to abstract the storage to the usage. With an ORM, your biggest concern will be “What can I do with my objects” and not “How this object is stored? where? when?”. You won’t write any SQL queries only Python code. Last thing, your code won’t be “storage type” dependent. You will be able to change your storage easily without re-writing your entire project.
-
-Without ORM:
-
-conn = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="root", db="my_db", charset="utf8")
-cur = conn.cursor()
-cur.execute("SELECT * FROM states ORDER BY id ASC") # HERE I have to know SQL to grab all states in my database
-query_rows = cur.fetchall()
-for row in query_rows:
-    print(row)
-cur.close()
-conn.close()
-With an ORM:
-
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format("root", "root", "my_db"), pool_pre_ping=True)
-Base.metadata.create_all(engine)
-
-session = Session(engine)
-for state in session.query(State).order_by(State.id).all(): # HERE: no SQL query, only objects!
-    print("{}: {}".format(state.id, state.name))
-session.close()
 Resources
 Object-relational mappers
-mysqlclient/MySQLdb documentation (please don’t pay attention to _mysql)
+MySQLdb documentation (ignore references to _mysql)
 MySQLdb tutorial
 SQLAlchemy tutorial
-SQLAlchemy
-mysqlclient/MySQLdb
+SQLAlchemy documentation
 Introduction to SQLAlchemy
 Flask SQLAlchemy
 10 common stumbling blocks for SQLAlchemy newbies
 Python SQLAlchemy Cheatsheet
-SQLAlchemy ORM Tutorial for Python Developers (Warning: This tutorial is with PostgreSQL, but the concept of SQLAlchemy is the same with MySQL)
+SQLAlchemy ORM Tutorial for Python Developers (Note: This tutorial uses PostgreSQL, but the concepts are applicable to MySQL)
 SQLAlchemy Tutorial
-Table of contents
-Files	Description
-0-select_states.py	Python script that lists all states from the database hbtn_0e_0_usa
-1-filter_states.py	Python script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa
-2-my_filter_states.py	Python script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument
-3-my_safe_filter_states.py	Python script that takes in arguments and displays all values in the states table of hbtn_0e_0_usa where name matches the argument safe from SQL injections
-4-cities_by_state.py	Python script that lists all cities from the database hbtn_0e_4_usa
-5-filter_cities.py	Python script that takes in the name of a state as an argument and lists all cities of that state, using the database hbtn_0e_4_usa
-model_state.py	python file that contains the class definition of a State and an instance Base = declarative_base()
-7-model_state_fetch_all.py	Python script that lists all State objects from the database hbtn_0e_6_usa
-8-model_state_fetch_first.py	Python script that prints the first State object from the database hbtn_0e_6_usa
-9-model_state_filter_a.py	Python script that lists all State objects that contain the letter a from the database hbtn_0e_6_usa
-10-model_state_my_get.py	Python script that prints the State object with the name passed as argument from the database hbtn_0e_6_usa
-11-model_state_insert.py	Python script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
-12-model_state_update_id_2.py	Python script that changes the name of a State object from the database hbtn_0e_6_usa
-13-model_state_delete_a.py	Python script that deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa
-model_city.py	Python file that contains the class definition of a City
-14-model_city_fetch_by_state.py	Python script that prints all City objects from the database hbtn_0e_14_usa
-More Info
-Install MySQLdb module version 2.0.x For installing MySQLdb, you need to have MySQL installed: How to install MySQL 8.0 in Ubuntu 20.04
+
+Installation Instructions
+MySQLdb Module Version 2.0.x
+To install the MySQLdb module, ensure MySQL is installed:
 
 $ sudo apt-get install python3-dev
 $ sudo apt-get install libmysqlclient-dev
 $ sudo apt-get install zlib1g-dev
 $ sudo pip3 install mysqlclient
-...
+
+
+Verify installation:
+
 $ python3
 >>> import MySQLdb
 >>> MySQLdb.version_info 
 (2, 0, 3, 'final', 0)
-Install SQLAlchemy module version 1.4.x
+
+
+SQLAlchemy Module Version 1.4.x
+Install SQLAlchemy:
 
 $ sudo pip3 install SQLAlchemy
-...
+
+
+Verify installation:
+
 $ python3
 >>> import sqlalchemy
->>> sqlalchemy.__version__ 
+>>> sqlalchemy.__version__
 '1.4.22'
-Also, you can have this warning message:
-
- /usr/local/lib/python3.4/dist-packages/sqlalchemy/engine/default.py:552: Warning: (1681, "'@@SESSION.GTID_EXECUTED' is deprecated and will be re
-moved in a future release.")                                                                                                                    
-  cursor.execute(statement, parameters) 
