@@ -35,7 +35,9 @@ $ sudo pip3 install mysqlclient
 Verify installation:
 
 $ python3
+
 >>> import MySQLdb
+
 >>> MySQLdb.version_info 
 (2, 0, 3, 'final', 0)
 
@@ -49,6 +51,8 @@ $ sudo pip3 install SQLAlchemy
 Verify installation:
 
 $ python3
+
 >>> import sqlalchemy
+
 >>> sqlalchemy.__version__
 '1.4.22'
