@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """A script that
-accepts a URL as input
-sends an HTTP request to the specified URL
-outputs the response body
+- takes in a URL
+- sends a request to the URL
+- displays the body of the response.
 """
 import sys
 import requests
